@@ -26,7 +26,7 @@ namespace Kissaohjelma
         public void PrintWeight()
         {
             if (this.weight > 7)
-                Console.WriteLine($"Syötit kissaa liikaa ja nyt se on läski.");
+                Console.WriteLine($"Syötit kissaa {this.name} liikaa ja nyt se on läski.");
             else if (this.weight < 3)
                 Console.WriteLine($"{this.name} jäi alipainoiseksi ja kuoli :(");
             else

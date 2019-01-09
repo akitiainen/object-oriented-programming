@@ -7,13 +7,13 @@ namespace Kissaohjelma
         static void Main(string[] args)
         {
             Console.WriteLine("Tämä on kisseohjelma.");
-            Cat myCat = new Cat("", 2);
+            Cat myCat = new Cat("tofi", 2);
             myCat.GainWeight(Gain());
             myCat.PrintWeight();
             Console.WriteLine("_________________________________________");
-            Cat myNewCat = new Cat("tofi" , 3);
-            myNewCat.GainWeight(Gain());
-            myNewCat.PrintWeight();
+            //Cat myNewCat = new Cat("tofi" , 3);
+            //myNewCat.GainWeight(Gain());
+            //myNewCat.PrintWeight();
 
             Console.ReadKey();
         }
