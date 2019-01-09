@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kissaohjelma", "Kissaohjelma\Kissaohjelma.csproj", "{03D59F03-5F53-4BCB-851B-F26B747B378B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kissaohjelma", "Kissaohjelma\Kissaohjelma.csproj", "{03D59F03-5F53-4BCB-851B-F26B747B378B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kirjaohjelma", "Kirjaohjelma\Kirjaohjelma.csproj", "{AA4AAF9F-506A-4D40-810F-89C182A0E048}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kirjaohjelma", "Kirjaohjelma\Kirjaohjelma.csproj", "{AA4AAF9F-506A-4D40-810F-89C182A0E048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTask", "CarTask\CarTask.csproj", "{7E26589E-A9C9-4FC2-A013-496FD9875839}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AA4AAF9F-506A-4D40-810F-89C182A0E048}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA4AAF9F-506A-4D40-810F-89C182A0E048}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA4AAF9F-506A-4D40-810F-89C182A0E048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E26589E-A9C9-4FC2-A013-496FD9875839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E26589E-A9C9-4FC2-A013-496FD9875839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E26589E-A9C9-4FC2-A013-496FD9875839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E26589E-A9C9-4FC2-A013-496FD9875839}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

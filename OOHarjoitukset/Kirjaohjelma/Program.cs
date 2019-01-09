@@ -20,7 +20,7 @@ namespace Kirjaohjelma
             Console.WriteLine(newBook2.PrintInfo());
             Console.ReadKey();
 
-            Console.WriteLine( newBook.CompareBooks(newBook2));
+            Console.WriteLine(newBook.CompareBooks(newBook2));
             Console.ReadKey();
         }
     }
