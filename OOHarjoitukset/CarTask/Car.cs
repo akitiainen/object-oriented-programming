@@ -11,8 +11,6 @@ namespace CarTask
 
         public Car()
         {
-            this.brand = null;
-            this.speed = 0;
         }
 
         public void AskData()
@@ -24,13 +22,34 @@ namespace CarTask
             {
                 Console.Clear();
                 Console.WriteLine("yritäppä uusiks ja laita kuule numeroita");
-
             }
         }
 
         public void ShowCarInfo()
         {
-            Console.WriteLine($"auton merkki: {this.brand}\nauton nopeus: {this.speed}");
+            Console.WriteLine($"auton merkki: {this.brand}\n auton nopeus: {this.speed}");
+        }
+
+        public void Accelerate(int iSpeed)
+        {
+           
+                
+                if (iSpeed >= 0)
+                {
+                    this.speed += iSpeed;
+                    Console.WriteLine($"Nopeutta lisättiin {iSpeed}. Uusi nopeus on nyt {this.speed} km/h. \n");
+                }
+                else if (iSpeed == 0)
+                    Console.WriteLine("Ei muutosta nopeuteen.");
+                else
+                    Console.WriteLine("Negatiivista muutosta ei sallita.");
+            
+        }
+
+        public void Brake()
+        {
+            this.speed = Convert.ToInt32(speed*0.9) ;
+            Console.WriteLine($"Nopeutta hidastettiin 10%. Uusi nopeus on {this.speed}");
         }
     }
 }
