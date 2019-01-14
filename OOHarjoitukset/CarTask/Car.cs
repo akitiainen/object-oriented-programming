@@ -12,7 +12,7 @@ namespace CarTask
         public Car()
         {
         }
-
+        
         public void AskData()
         {
             Console.WriteLine("Syötä auton merkki: ");
@@ -27,14 +27,12 @@ namespace CarTask
 
         public void ShowCarInfo()
         {
-            Console.WriteLine($"auton merkki: {this.brand}\n auton nopeus: {this.speed}");
+            Console.WriteLine($"auton merkki: {this.brand}\nauton nopeus: {this.speed}");
         }
 
         public void Accelerate(int iSpeed)
         {
-           
-                
-                if (iSpeed >= 0)
+            if (iSpeed >= 0)
                 {
                     this.speed += iSpeed;
                     Console.WriteLine($"Nopeutta lisättiin {iSpeed}. Uusi nopeus on nyt {this.speed} km/h. \n");
@@ -43,7 +41,6 @@ namespace CarTask
                     Console.WriteLine("Ei muutosta nopeuteen.");
                 else
                     Console.WriteLine("Negatiivista muutosta ei sallita.");
-            
         }
 
         public void Brake()
