@@ -33,14 +33,14 @@ namespace CarTask
         public void Accelerate(int iSpeed)
         {
             if (iSpeed >= 0)
-                {
-                    this.speed += iSpeed;
-                    Console.WriteLine($"Nopeutta lisättiin {iSpeed}. Uusi nopeus on nyt {this.speed} km/h. \n");
-                }
-                else if (iSpeed == 0)
-                    Console.WriteLine("Ei muutosta nopeuteen.");
-                else
-                    Console.WriteLine("Negatiivista muutosta ei sallita.");
+            {
+                this.speed += iSpeed;
+                Console.WriteLine($"Nopeutta lisättiin {iSpeed}. Uusi nopeus on nyt {this.speed} km/h. \n");
+            }
+            else if (iSpeed == 0)
+                Console.WriteLine("Ei muutosta nopeuteen.");
+            else
+                Console.WriteLine("Negatiivista muutosta ei sallita.");
         }
 
         public void Brake()

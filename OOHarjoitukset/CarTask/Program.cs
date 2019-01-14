@@ -30,6 +30,7 @@ namespace CarTask
                         break;
 
                     case ConsoleKey.X:
+                        Environment.Exit(0);
                         break;
                 }
 
@@ -38,7 +39,7 @@ namespace CarTask
 
         static void Intro()
         {
-            Console.WriteLine("Tämä on iida-ohjelma.");
+            Console.WriteLine("Tämä on auto-ohjelma.");
         }
 
         static void Intro2()
