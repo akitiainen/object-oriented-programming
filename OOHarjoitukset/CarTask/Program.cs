@@ -55,7 +55,6 @@ namespace CarTask
             Console.WriteLine("lissääppä noppeutta antamalla numeroita");
             while (!int.TryParse(Console.ReadLine(), out speed))
             {
-                Console.Clear();
                 Console.WriteLine("yritäppä uusiks ja laita kuule numeroita");
             }
             car.Accelerate(speed);
