@@ -6,7 +6,7 @@ namespace CompanyProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
