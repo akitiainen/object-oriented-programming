@@ -6,8 +6,8 @@ namespace Kissaohjelma
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Tämä on kisseohjelma.");
-            Cat myCat = new Cat("tofi", 2);
+            Console.WriteLine("Tämä on iidaohjelma.");
+            Cat myCat = new Cat("iids", 2);
             myCat.GainWeight(Gain());
             myCat.PrintWeight();
             Console.WriteLine("_________________________________________");
@@ -23,14 +23,17 @@ namespace Kissaohjelma
             int x = 0;
             do
             {
-                Console.WriteLine("Anna kissalle ruokaa painamalla k, lopeta painamalla e:");
-                string k = Console.ReadLine();
-                if (k == "k")
-                    x = x + 1;
-                else if (k == "e")
+                Console.WriteLine("Anna iidalle ruokaa painamalla k, lopeta painamalla e:");
+                var input = Console.ReadKey();
+                if (input.Key == ConsoleKey.K)
+                {
+                    x += 1;
+                    Console.Clear();
+                }
+                else if (input.Key == ConsoleKey.E)
                     break;
-                Console.Clear();
-            } while (x < 10);
+
+            } while (x < 15);
             
             return x;
         }
