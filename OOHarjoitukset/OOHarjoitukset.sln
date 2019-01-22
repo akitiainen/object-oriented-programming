@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTask", "CarTask\CarTask.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyProgram", "CompanyProgram\CompanyProgram.csproj", "{FA7F7E45-919B-4BC5-B020-1AD8447C6CA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeTask", "EmployeeTask\EmployeeTask.csproj", "{F454789F-FA91-474E-B30F-17B87DAB059A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeTask", "EmployeeTask\EmployeeTask.csproj", "{F454789F-FA91-474E-B30F-17B87DAB059A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketPriceProgram", "TicketPriceProgram\TicketPriceProgram.csproj", "{BA10B4E2-EF36-44E8-A45E-4ECC5502E53D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F454789F-FA91-474E-B30F-17B87DAB059A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F454789F-FA91-474E-B30F-17B87DAB059A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F454789F-FA91-474E-B30F-17B87DAB059A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA10B4E2-EF36-44E8-A45E-4ECC5502E53D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA10B4E2-EF36-44E8-A45E-4ECC5502E53D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA10B4E2-EF36-44E8-A45E-4ECC5502E53D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA10B4E2-EF36-44E8-A45E-4ECC5502E53D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
