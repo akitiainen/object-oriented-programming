@@ -6,8 +6,10 @@ namespace TicketPriceProgram
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             Person newPerson = CreatePerson();
-            PrintPerson(newPerson);
+            Ticket ticket = CreateTicket(newPerson);
+            PrintInfo(newPerson, ticket);
         }
 
         static Person CreatePerson()
@@ -22,12 +24,21 @@ namespace TicketPriceProgram
             firstPerson.Age = age;
             firstPerson.AskConscript();
             firstPerson.AskMTK();
+            firstPerson.AskStudent();
             return firstPerson;
         }
 
-        static void PrintPerson(Person x)
+        static Ticket CreateTicket(Person x)
+        {
+            Ticket ticket = new Ticket();
+            ticket.Calculator(x);
+            return ticket;
+        }
+
+        static void PrintInfo(Person x, Ticket y)
         {
             x.Print();
+            y.PrintTicketPrice();
         }
     }
 }

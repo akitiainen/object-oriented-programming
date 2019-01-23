@@ -31,32 +31,87 @@ namespace TicketPriceProgram
         public void AskConscript()
         {
             Console.Clear();
+            do
+            {
             Console.WriteLine("Oletko varusmies? K/E");
             var input = Console.ReadKey();
-            if (input.Key == ConsoleKey.K)
-                conscript = true;
-            else if (input.Key == ConsoleKey.E)
-                conscript = false;
-            else
-                Console.WriteLine("homo");
+                if (input.Key == ConsoleKey.K)
+                {
+                    conscript = true;
+                    break;
+                }
+                else if (input.Key == ConsoleKey.E)
+                {
+                    conscript = false;
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("tyhmyri laita K tai E");
+                }
+            } while (true);
         }
 
         public void AskMTK()
         {
             Console.Clear();
-            Console.WriteLine("Oletko MTK:n jäsen? K/E");
-            var input = Console.ReadKey();
-            if (input.Key == ConsoleKey.K)
-                mtk = true;
-            else if (input.Key == ConsoleKey.E)
-                mtk = false;
-            else
-                Console.WriteLine("homo");
+            do
+            {
+                Console.WriteLine("Oletko MTK:n jäsen? K/E");
+                var input = Console.ReadKey();
+                if (input.Key == ConsoleKey.K)
+                {
+                    mtk = true;
+                    break;
+                }
+                else if (input.Key == ConsoleKey.E)
+                {
+                    mtk = false;
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("tyhmyri laita K tai E");
+                }
+            } while (true);
+        }
+
+        public void AskStudent()
+        {
+            Console.Clear();
+            do
+            {
+                Console.WriteLine("Oletko opiskelija? K/E");
+                var input = Console.ReadKey();
+                if (input.Key == ConsoleKey.K)
+                {
+                    student = true;
+                    break;
+                }
+                else if (input.Key == ConsoleKey.E)
+                {
+                    student = false;
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("tyhmyri laita K tai E");
+                }
+            } while (true);
         }
 
         public void Print()
         {
             Console.WriteLine(_age);
+            if(conscript == true)
+                Console.WriteLine("varusmies");
+            if(mtk == true)
+                Console.WriteLine("mtk:n jäsen");
+            if(student == true)
+                Console.WriteLine("opiskelija");
         }
     }
 }
