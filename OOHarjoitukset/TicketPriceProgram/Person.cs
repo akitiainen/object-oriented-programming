@@ -30,7 +30,6 @@ namespace TicketPriceProgram
 
         public void AskConscript()
         {
-            Console.Clear();
             do
             {
             Console.WriteLine("Oletko varusmies? K/E");
@@ -105,13 +104,7 @@ namespace TicketPriceProgram
 
         public void Print()
         {
-            Console.WriteLine(_age);
-            if(conscript == true)
-                Console.WriteLine("varusmies");
-            if(mtk == true)
-                Console.WriteLine("mtk:n jäsen");
-            if(student == true)
-                Console.WriteLine("opiskelija");
+            
         }
     }
 }

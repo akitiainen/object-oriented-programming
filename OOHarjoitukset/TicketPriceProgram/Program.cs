@@ -7,24 +7,37 @@ namespace TicketPriceProgram
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Intro();
             Person newPerson = CreatePerson();
             Ticket ticket = CreateTicket(newPerson);
             PrintInfo(newPerson, ticket);
+        }
+
+        static void Intro()
+        {
+            Console.WriteLine("Tämä ohjelma laskee maatalousnäyttelyn lipun hinnan");
         }
 
         static Person CreatePerson()
         {
             int age;
             Person firstPerson = new Person();
-            Console.WriteLine("Syötä ikäsi: ");
-            while (!int.TryParse(Console.ReadLine(), out age))
-            {
-                Console.WriteLine("ei ole numero lol");
-            }
-            firstPerson.Age = age;
             firstPerson.AskConscript();
-            firstPerson.AskMTK();
-            firstPerson.AskStudent();
+            if (firstPerson.conscript == false)
+            {
+                firstPerson.AskStudent();
+                firstPerson.AskMTK();
+                if (firstPerson.student == false)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Syötä ikäsi: ");
+                    while (!int.TryParse(Console.ReadLine(), out age))
+                    {
+                        Console.WriteLine("ei ole numero lol");
+                    }
+                    firstPerson.Age = age;
+                }
+            }
             return firstPerson;
         }
 
