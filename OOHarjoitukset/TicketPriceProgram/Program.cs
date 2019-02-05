@@ -30,11 +30,19 @@ namespace TicketPriceProgram
                 if (firstPerson.student == false)
                 {
                     Console.Clear();
-                    Console.WriteLine("Syötä ikäsi: ");
-                    while (!int.TryParse(Console.ReadLine(), out age))
+                    do
                     {
-                        Console.WriteLine("ei ole numero lol");
-                    }
+                        Console.WriteLine("Syötä ikäsi: ");
+                        while (!int.TryParse(Console.ReadLine(), out age))
+                        {
+                            Console.WriteLine("ei ole numero lol");
+                        }
+                        if (age < 1)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Syötä positiivinen ikä");
+                        }
+                    } while (age < 1);
                     firstPerson.Age = age;
                 }
             }
