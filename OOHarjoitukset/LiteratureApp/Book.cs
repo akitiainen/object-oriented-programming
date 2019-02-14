@@ -10,7 +10,7 @@ namespace LiteratureApp
         public string title;
         public string author;
         public string publisher;
-        public double price;
+        public double _price;
         public static string theme;
 
         public Book(string title, string author, string publisher, double price)
@@ -18,7 +18,7 @@ namespace LiteratureApp
             this.title = title;
             this.author = author;
             this.publisher = publisher;
-            this.price = price;
+            _price = price;
             
             
         }
@@ -31,7 +31,7 @@ namespace LiteratureApp
             Console.WriteLine("Syötä julkaisija:");
             publisher = Console.ReadLine();
             Console.WriteLine("Syötä kirjan hinta:");
-            while (!double.TryParse(Console.ReadLine(), out price))
+            while (!double.TryParse(Console.ReadLine(), out _price))
             {
                 Console.WriteLine("syötä hinta numeroina");
             }
@@ -49,7 +49,7 @@ namespace LiteratureApp
             else
             {
                 s = $"title:\t\t{title}\nauthor:\t\t{author}\npublisher:\t{publisher}\n" +
-                    $"price:\t\t{price.ToString("c", CultureInfo.CurrentCulture)}\n" +
+                    $"price:\t\t{_price.ToString("c", CultureInfo.CurrentCulture)}\n" +
                     $"theme:\t\t{theme}\n____________________________________\n";
             }
             return s;
@@ -59,6 +59,22 @@ namespace LiteratureApp
         {
             Console.WriteLine("Annas uus teema");
             theme = Console.ReadLine();
+        }
+
+        public double Price
+        {
+            get { return _price; }
+            set
+            {
+                if (value > 30)
+                {
+                    _price = value * 0.9;
+                }
+                else
+                {
+                    _price = value;
+                }
+            }
         }
     }
 }
