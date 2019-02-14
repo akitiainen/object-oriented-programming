@@ -12,13 +12,14 @@ namespace LiteratureApp
         public string publisher;
         public double price;
         public static string theme;
-        
+
         public Book(string title, string author, string publisher, double price)
         {
             this.title = title;
             this.author = author;
             this.publisher = publisher;
             this.price = price;
+            
             
         }
         public Book()
@@ -38,10 +39,10 @@ namespace LiteratureApp
             theme = Console.ReadLine();
         }
 
-        public string GetBook(Book book)
+        public string GetBook(string title)
         {
             string s = string.Empty;
-            if (book.title != title)
+            if (this.title != title)
             {
                 s = "väärä kirja lol";
             }
