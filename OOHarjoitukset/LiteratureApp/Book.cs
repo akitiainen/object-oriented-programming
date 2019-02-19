@@ -13,46 +13,36 @@ namespace LiteratureApp
         public double _price;
         public static string theme;
 
-        public Book(string title, string author, string publisher, double price)
+        public Book(string title, string author, string publisher, double price, string bookTheme)
         {
             this.title = title;
             this.author = author;
             this.publisher = publisher;
             _price = price;
-            
-            
-        }
-        public Book()
-        {
-            Console.WriteLine("Syötä kirjan nimi:");
-            title = Console.ReadLine();
-            Console.WriteLine("Syötä kirjailija:");
-            author = Console.ReadLine();
-            Console.WriteLine("Syötä julkaisija:");
-            publisher = Console.ReadLine();
-            Console.WriteLine("Syötä kirjan hinta:");
-            while (!double.TryParse(Console.ReadLine(), out _price))
-            {
-                Console.WriteLine("syötä hinta numeroina");
-            }
-            Console.WriteLine("Syötä kirjan teema:");
-            theme = Console.ReadLine();
+            theme = bookTheme;
         }
 
-        public string GetBook(string title)
+        public Book()
+        {
+        }
+
+        public void GetBook(string title)
         {
             string s = string.Empty;
-            if (this.title != title)
-            {
-                s = "väärä kirja lol";
-            }
-            else
-            {
+            if (this.title == title)
                 s = $"title:\t\t{title}\nauthor:\t\t{author}\npublisher:\t{publisher}\n" +
                     $"price:\t\t{_price.ToString("c", CultureInfo.CurrentCulture)}\n" +
                     $"theme:\t\t{theme}\n____________________________________\n";
-            }
-            return s;
+            else
+                s = $"Kirjaa {title} ei löydy!";
+            Console.WriteLine(s);
+        }
+
+        public void PrintBook()
+        {
+             Console.WriteLine($"title:\t\t{title}\npublisher:\t{publisher}\n" +
+                    $"price:\t\t{_price.ToString("c", CultureInfo.CurrentCulture)}\n" +
+                    $"theme:\t\t{theme}\n____________________________________\n");
         }
 
         public static void ChangeTheme()
@@ -74,6 +64,14 @@ namespace LiteratureApp
                 {
                     _price = value;
                 }
+            }
+        }
+
+        public string Author
+        {
+            get
+            {
+                return author;
             }
         }
     }
