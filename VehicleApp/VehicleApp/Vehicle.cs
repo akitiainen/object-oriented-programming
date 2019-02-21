@@ -7,23 +7,45 @@ namespace VehicleApp
 {
     class Vehicle
     {
-        protected string _type;
-        protected string _brand;
-        protected string _year;
-        protected double _price;
+        protected string type;
+        protected string brand;
+        protected double year;
+        protected double price;
 
         public Vehicle()
         {
-            
         }
 
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
 
+        public string Brand
+        {
+            get { return brand; }
+            set { brand = value; }
+        }
+
+        public double Year
+        {
+            get { return year; }
+            set { year = value; }
+        }
+
+        public double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
 
         public virtual void PrintInfo()
         {
-            Console.WriteLine($"brand:t\t{_brand}" +
-                $"manufacturing year:\t{_year}" +
-                $"price\t\t{_price.ToString("c", CultureInfo.CurrentCulture)}");
+            Console.WriteLine($"Type:\t\t{type}\n" +
+                $"Brand:\t\t{brand}\n" +
+                $"Year:\t\t{year}\n" +
+                $"Price\t\t{price.ToString("c", CultureInfo.CurrentCulture)}");
         }
     }
 
