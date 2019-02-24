@@ -16,6 +16,14 @@ namespace VehicleApp
         {
         }
 
+        public Vehicle(string type, string brand, double year, double price)
+        {
+            this.type = type;
+            this.brand = brand;
+            this.year = year;
+            this.price = price;
+        }
+
         public string Type
         {
             get { return type; }
