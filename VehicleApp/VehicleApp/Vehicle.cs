@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace VehicleApp
 {
-    class Vehicle
+    abstract class Vehicle
     {
         protected string type;
         protected string brand;

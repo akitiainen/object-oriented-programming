@@ -8,22 +8,6 @@ namespace VehicleApp
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Vehicle firstVehicle = new Vehicle()
-            {
-                Type = "lääh puuh tyllerö",
-                Brand = "iids",
-                Year = 1999,
-                Price = 10005000.02
-            };
-
-            Vehicle secondVehicle = new Vehicle()
-            {
-                Type = "pojan pyllerö",
-                Brand = "aki",
-                Year = 1996,
-                Price = 7
-            };
-
             Car firstCar = new Car()
             {
                 Type = "Coupé",
@@ -35,11 +19,14 @@ namespace VehicleApp
                 Doors = 3
             };
 
-            firstVehicle.PrintInfo();
+            Car copyCar = firstCar;
+
+            firstCar.PrintInfo();
             Console.WriteLine("_______________________________\n");
-            secondVehicle.PrintInfo();
-            Console.WriteLine("_______________________________\n");
-            Console.WriteLine(firstCar.Equals(firstCar));
+            if(firstCar.Equals(copyCar))
+                Console.WriteLine("autot o samat");
+            else
+                Console.WriteLine("autot o erit");
         }
     }
 }
