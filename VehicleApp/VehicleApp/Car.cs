@@ -15,6 +15,14 @@ namespace VehicleApp
         {
         }
 
+        public Car(double engineSize, string model, int doorAmount, string type, string brand, double year, double price):
+            base(type, brand, year, price)
+        {
+            this.engineSize = engineSize;
+            this.model = model;
+            this.doorAmount = doorAmount;
+        }
+
         //public Car(double engineSize, string model, int doorAmount, string type, string brand, double year, double price)
         //{
         //    this.engineSize = engineSize;
