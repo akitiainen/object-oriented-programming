@@ -24,30 +24,6 @@ namespace VehicleApp
             this.price = price;
         }
 
-        public string Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
-
-        public string Brand
-        {
-            get { return brand; }
-            set { brand = value; }
-        }
-
-        public double Year
-        {
-            get { return year; }
-            set { year = value; }
-        }
-
-        public double Price
-        {
-            get { return price; }
-            set { price = value; }
-        }
-
         public virtual void PrintInfo()
         {
             Console.WriteLine($"Type:\t\t{type}\n" +

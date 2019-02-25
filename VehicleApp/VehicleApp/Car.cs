@@ -23,35 +23,6 @@ namespace VehicleApp
             this.doorAmount = doorAmount;
         }
 
-        //public Car(double engineSize, string model, int doorAmount, string type, string brand, double year, double price)
-        //{
-        //    this.engineSize = engineSize;
-        //    this.model = model;
-        //    this.doorAmount = doorAmount;
-        //    this.type = type;
-        //    this.brand = brand;
-        //    this.year = year;
-        //    this.price = price;
-        //}
-
-        public double EngineSize
-        {
-            get { return engineSize; }
-            set { engineSize = value; }
-        }
-
-        public string Model
-        {
-            get { return model; }
-            set { model = value; }
-        }
-
-        public int Doors
-        {
-            get { return doorAmount; }
-            set { doorAmount = value; }
-        }
-
         public override void PrintInfo()
         {
             base.PrintInfo();

@@ -18,7 +18,25 @@ namespace VehicleApp
         public Truck(double engineSize, string model, int doorAmount, string type, string brand, double year, double price, int loadWeight, int consumptionPerKg):
             base(engineSize, model, doorAmount, type, brand, year, price)
         {
-            
+            this.loadWeight = loadWeight;
+            this.consumptionPerKg = consumptionPerKg;
+        }
+
+        public override void PrintInfo()
+        {
+            base.PrintInfo();
+
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public void CalculateConsumption()
+        {
+            Console.WriteLine($"T{this.ToString()}" +
+                $"Consumption:\t{loadWeight * consumptionPerKg} l/100km");
         }
     }
 }
