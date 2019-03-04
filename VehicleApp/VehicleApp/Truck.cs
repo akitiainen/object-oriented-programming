@@ -35,7 +35,7 @@ namespace VehicleApp
 
         public void CalculateConsumption()
         {
-            Console.WriteLine($"T{this.ToString()}" +
+            Console.WriteLine($"{this.ToString()}\n" +
                 $"Consumption:\t{loadWeight * consumptionPerKg} l/100km");
         }
     }
