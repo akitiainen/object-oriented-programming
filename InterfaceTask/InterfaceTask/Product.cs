@@ -8,7 +8,7 @@ namespace InterfaceTask
     interface IProduct
     {
         Product GetProduct(string name);
-        double CalculateTotal();
+        string CalculateTotal();
     }
     class Product : IProduct
     {
@@ -16,7 +16,6 @@ namespace InterfaceTask
         public double price;
         public int amount;
 
-        
 
         public Product(string name, double price, int amount)
         {
@@ -30,7 +29,7 @@ namespace InterfaceTask
             return $"Name: {name}\tPrice: {price:F2} €\tAmount: {amount}";
         }
 
-        Product IProduct.GetProduct(string name)
+        public Product GetProduct(string name)
         {
             if (this.name == name)
                 return this;
@@ -38,9 +37,9 @@ namespace InterfaceTask
                 return null;
         }
 
-        double IProduct.CalculateTotal()
+        public string CalculateTotal()
         {
-            return price * Convert.ToDouble(amount);
+            return (price * Convert.ToDouble(amount)).ToString("c", CultureInfo.CurrentCulture);
         }
     }
 }

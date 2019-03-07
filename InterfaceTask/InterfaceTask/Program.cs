@@ -12,9 +12,9 @@ namespace InterfaceTask
 
             List<Product> productList = new List<Product>()
             {
-                new Product("kalja", 110, 999),
+                new Product("kalja", 110, 733),
                 new Product("olut", 13.25, 999),
-                new Product("bishe", 28, 999)
+                new Product("bishe", 28, 55),
             };
 
             List<Customer> customerList = new List<Customer>()
@@ -26,38 +26,61 @@ namespace InterfaceTask
 
             Store store = new Store("Akin kalia kauppa", 100500);
 
+            
             foreach (var item in productList)
             {
-                store.productList.Add(item);
+                store.AddProduct(item);
             }
-
+            
             foreach (var item in customerList)
             {
-                store.customerList.Add(item);
+                store.AddCustomer(item);
             }
 
-            Console.WriteLine(store.ToString());
-
-            /*productList.ForEach(Console.WriteLine);
-            Console.WriteLine("____________________________\n");
-
-            foreach (IProduct item in productList)
+            while (true)
             {
-                Console.WriteLine(item.CalculateTotal().ToString("c", CultureInfo.CurrentCulture));
+                Console.Clear();
+                Intro();
+                var input = Console.ReadKey();
+                switch (input.Key)
+                {
+                    case ConsoleKey.D1:
+                        Console.Clear();
+                        Console.WriteLine(store.ToString());
+                        Console.WriteLine("_________________________\n");
+                        Console.WriteLine("Paina näppäintä jatkaaksesi...");
+                        Console.ReadKey();
+                        break;
+
+                    case ConsoleKey.D2:
+                        Console.Clear();
+                        store.PrintCustomers();
+                        Console.WriteLine("Paina näppäintä jatkaaksesi...");
+                        Console.ReadKey();
+                        break;
+
+                    case ConsoleKey.D3:
+                        Console.Clear();
+                        store.PrintProducts();
+                        Console.WriteLine("Paina näppäintä jatkaaksesi...");
+                        Console.ReadKey();
+                        break;
+
+                    case ConsoleKey.X:
+                        Console.Clear();
+                        Environment.Exit(0);
+                        break;
+                }
             }
+        }
 
-            Console.WriteLine("____________________________\n");
-
-            int i = 0;
-            foreach (ICustomer item in customerList)
-            {
-
-                Console.WriteLine($"{customerList[i]}\tBonus: {item.GetBonus().ToString("c", CultureInfo.CurrentCulture)}");
-                i++;
-            }
-            /*product.ToString();
-            Console.WriteLine(product.GetProduct("iids"));
-            Console.WriteLine(product.CalculateTotal().ToString("c", CultureInfo.CurrentCulture));*/
+        static void Intro()
+        {
+            Console.WriteLine("Tämä ohjelma kertoo kaupan tilanteen.\n" +
+                "1. Tulosta kaupan tiedot\n" +
+                "2. Tulosta asiakkaiden tiedot\n" +
+                "3. Tulosta tuotetiedot\n" +
+                "X. Poistu ohjelmasta");
         }
     }
 }

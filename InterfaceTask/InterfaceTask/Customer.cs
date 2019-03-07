@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Globalization;
 
 namespace InterfaceTask
 {
     interface ICustomer
     {
         Customer GetCustomer(string name);
-        double GetBonus();
+        string GetBonus();
     }
     class Customer : ICustomer
     {
@@ -25,7 +26,7 @@ namespace InterfaceTask
             return $"Name: {name}\tPurchases: {purchases:F2} €";
         }
 
-        Customer ICustomer.GetCustomer(string name)
+        public Customer GetCustomer(string name)
         {
             if (name == this.name)
                 return this;
@@ -33,14 +34,14 @@ namespace InterfaceTask
                 return null;
         }
 
-        double ICustomer.GetBonus()
+        public string GetBonus()
         {
             if (purchases <= 1000)
-                return purchases * 0.02;
+                return (purchases * 0.02).ToString("c", CultureInfo.CurrentCulture);
             else if (purchases <= 2000)
-                return purchases * 0.03;
+                return (purchases * 0.03).ToString("c", CultureInfo.CurrentCulture);
             else
-                return purchases * 0.05;
+                return (purchases * 0.05).ToString("c", CultureInfo.CurrentCulture);
         }
     }
 }

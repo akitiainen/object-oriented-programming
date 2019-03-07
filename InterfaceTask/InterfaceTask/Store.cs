@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Globalization;
 
 namespace InterfaceTask
 {
@@ -20,13 +21,8 @@ namespace InterfaceTask
         public string name;
         public double revenue;
 
-        public List<Customer> customerList = new List<Customer>()
-            {
-            };
-
-        public List<Product> productList = new List<Product>()
-            {
-            };
+        public List<Customer> customerList = new List<Customer>();
+        public List<Product> productList = new List<Product>();
 
         public Store(string name, double revenue)
         {
@@ -34,38 +30,42 @@ namespace InterfaceTask
             this.revenue = revenue;
         }
 
-        void IProducts.AddProduct(Product product)
+        public void AddProduct(Product product)
         {
             productList.Add(product);
         }
 
-        void ICustomers.AddCustomer(Customer customer)
+        public void AddCustomer(Customer customer)
         {
             customerList.Add(customer);
         }
 
-        void IProducts.PrintProducts()
+        public void PrintProducts()
         {
+            Console.WriteLine($"Products: {productList.Count}");
             foreach (var p in productList)
             {
-                Console.WriteLine(p);
+                Console.WriteLine($"Product: {p.name}\tAmount: {p.amount}\tPrice: {p.price.ToString("c", CultureInfo.CurrentCulture)}\tTotal: {p.CalculateTotal()}");
             }
+            Console.WriteLine("_________________________\n");
         }
 
-        void ICustomers.PrintCustomers()
+        public void PrintCustomers()
         {
+            Console.WriteLine($"Customers: {customerList.Count}");
             foreach (var c in customerList)
             {
-                Console.WriteLine(c);
+                Console.WriteLine($"{c.ToString()}\tBonus:{c.GetBonus()}");
             }
+            Console.WriteLine("_________________________\n");
         }
 
         public override string ToString()
         {
-            return $"store name: {name}\n" +
-                $"revenue: {revenue}\n" +
-                $"customers: {customerList.Count}\n" +
-                $"products: {productList.Count}";
+            return $"Store Name: {name}\n" +
+                $"Revenue: {revenue.ToString("c", CultureInfo.CurrentCulture)}\n" +
+                $"Customers: {customerList.Count}\n" +
+                $"Products: {productList.Count}";
         }
     }
 }
