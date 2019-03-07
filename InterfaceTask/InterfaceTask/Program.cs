@@ -12,9 +12,9 @@ namespace InterfaceTask
 
             List<Product> productList = new List<Product>()
             {
-                new Product("kalja", 100500, 13),
-                new Product("olut", 13.25, 5),
-                new Product("bishe", 100000000, 1)
+                new Product("kalja", 110, 999),
+                new Product("olut", 13.25, 999),
+                new Product("bishe", 28, 999)
             };
 
             List<Customer> customerList = new List<Customer>()
@@ -24,7 +24,21 @@ namespace InterfaceTask
                 new Customer("pate", 3)
             };
 
-            productList.ForEach(Console.WriteLine);
+            Store store = new Store("Akin kalia kauppa", 100500);
+
+            foreach (var item in productList)
+            {
+                store.productList.Add(item);
+            }
+
+            foreach (var item in customerList)
+            {
+                store.customerList.Add(item);
+            }
+
+            Console.WriteLine(store.ToString());
+
+            /*productList.ForEach(Console.WriteLine);
             Console.WriteLine("____________________________\n");
 
             foreach (IProduct item in productList)
