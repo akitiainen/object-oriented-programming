@@ -19,7 +19,7 @@ namespace Tuoterekisteri
                     case ConsoleKey.D1:
                         Console.Clear();
                         Console.WriteLine(file.PrintJson());
-                        Console.WriteLine("Tulosta tuotteen kaikki tiedot? K/E");
+                        Console.WriteLine("Tulosta yhden tuotteen kaikki tiedot? K/E");
                         input = Console.ReadKey();
                         if (input.Key == ConsoleKey.K)
                         {
@@ -27,6 +27,8 @@ namespace Tuoterekisteri
                             Console.WriteLine(file.PrintJson());
                             file.FindItem(IdInput());
                         }
+                        else
+                            Console.Clear();
                         break;
                     case ConsoleKey.D2:
                         file.PrintByGroup(GroupName());
@@ -36,6 +38,7 @@ namespace Tuoterekisteri
                         file.PrintZeroStock();
                         break;
                     case ConsoleKey.D4:
+                        Console.Clear();
                         Console.WriteLine("1. Lisää kommentti\n" +
                             "2. Poista kommentti");
                         input = Console.ReadKey();

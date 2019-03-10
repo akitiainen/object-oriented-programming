@@ -31,7 +31,7 @@ namespace Tuoterekisteri
             foreach (var item in _itemList)
             {
                 content += $"Tuote: {item.Name}\nTuoteNro: {item.Id}\nTuoteryhmä: {item.GroupName}" +
-                    $"\n___________________________\n";
+                    $"\n_______________________________________\n";
             }
             return content;
         }
@@ -58,22 +58,23 @@ namespace Tuoterekisteri
         {
             string content = string.Empty;
             Console.Clear();
+            Console.WriteLine($"Ryhmän '{group}' tuotteet:\n_____________________________________\n");
             foreach (var item in _itemList)
             {
                 if (item.GroupName == group)
-                    Console.WriteLine($"Tuote: {item.Name}\nTuoteNro: {item.Id}\n_______________________________________\n");
+                    Console.WriteLine($"Tuote: {item.Name}\nTuoteNro: {item.Id}\n_____________________________________\n");
             }
         }
 
         public void PrintZeroStock()
         {
-            Console.WriteLine("Nämä tuotteet ovat loppu:");
+            Console.WriteLine("Nämä tuotteet ovat loppu:\n");
             foreach (var item in _itemList)
             {
                 if (item.Amount == 0)
                 {
                     Console.WriteLine($"Tuote: {item.Name}\nTuoteNro: {item.Id}\n" +
-                        $"Tuoteryhmä: {item.GroupName}\n_____________________________\n");
+                        $"Tuoteryhmä: {item.GroupName}\n_____________________________________\n");
                 }
             }
         }
